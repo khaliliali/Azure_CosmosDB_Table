@@ -1,18 +1,17 @@
-﻿using Azure;
-using Azure.Data.Tables;
+﻿using Azure.Data.Tables;
 
 string connectionString = "";
 string tableName = "Orders";
 
-/* Adding Entity to Table Storage */
+/* Adding Entity to CosmosDB Table */
 
-AddEntity("01", "Mobile", 123);
-AddEntity("02", "Laptop", 23);
-AddEntity("03", "Desktop", 123);
-AddEntity("04", "Laptop", 13);
-AddEntity("05", "Mobile", 33);
+AddCosmosDBEntity("01", "Mobile", 123);
+AddCosmosDBEntity("02", "Laptop", 23);
+AddCosmosDBEntity("03", "Desktop", 123);
+AddCosmosDBEntity("04", "Laptop", 13);
+AddCosmosDBEntity("05", "Mobile", 33);
 
-void AddEntity(string orderID, string category, int quantity)
+void AddCosmosDBEntity(string orderID, string category, int quantity)
 {
     TableClient tableClient = new TableClient(connectionString, tableName);
 
